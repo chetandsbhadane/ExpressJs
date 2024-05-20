@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/mycss.css"></link>
+</head>
+<body>
+    
+    <form action="addproducts">
+        <button type="submit" name="btn" id="btn" value="add">add new Product</button>
+    </form>
+    <br>
+    <div>
+    <table border="2">
+        <tr>
+            <th>Product id</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>price</th>
+            <th>Actions</th>
+        </tr>
+        <% for(var i=0 ;i<prodarr.length;i++){%>
+            <tr>
+                <td><%=prodarr[i].pid%></td>
+                <td><%=prodarr[i].pname%></td>
+                <td><%=prodarr[i].qty%></td>
+                <td><%=prodarr[i].price%></td>
+                <td>
+                    <a href="deleteproduct/<%=prodarr[i].pid%>">delete</a>/
+                    <a href="#">edit</a>
+
+                </td>
+                
+            </tr>
+        <%}%>
+    </table>
+    </div>
+</body>
+</html>
